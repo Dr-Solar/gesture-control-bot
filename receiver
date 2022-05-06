@@ -1,0 +1,74 @@
+#include<SoftwareSerial.h>
+
+SoftwareSerial mybt(0,1);
+
+String m;
+void setup()
+{
+  Serial.begin(9600);
+  mybt.begin(9600);
+  pinMode(5,OUTPUT);
+  pinMode(6,OUTPUT);
+  pinMode(7,OUTPUT);
+  pinMode(8,OUTPUT);
+  
+}
+
+void loop()
+  
+{
+   if (mybt.available())
+  {
+  
+   m = mybt.readString();
+   Serial.println(m);
+  
+  }
+   if (m =="F")
+   {
+     digitalWrite(5,0);
+     digitalWrite(6,1);
+     digitalWrite(7,0);
+     digitalWrite(8,1);
+     delay(1000);
+   }
+    
+    if (m =="B")
+    {
+      digitalWrite(5,1);
+      digitalWrite(6,0);
+      digitalWrite(7,1);
+      digitalWrite(8,0);
+      delay(1000);
+    }
+    
+    if (m =="R")
+    {
+      digitalWrite(5,0);
+      digitalWrite(6,1);
+      digitalWrite(7,0);
+      digitalWrite(8,0);
+      delay(1000);
+      
+    }
+    
+    if ( m =="L")
+    {
+      digitalWrite(5,0);
+      digitalWrite(6,0);
+      digitalWrite(7,0);
+      digitalWrite(8,1);
+      delay(1000);
+    }
+    
+    if (m =="S")
+    {
+       digitalWrite(5,0);
+       digitalWrite(6,0);
+       digitalWrite(7,0);
+       digitalWrite(8,0);
+       delay(1000);
+    }
+
+  
+}
