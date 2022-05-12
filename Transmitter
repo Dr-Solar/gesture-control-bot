@@ -9,16 +9,16 @@ int16_t gyro_x, gyro_y, gyro_z;
 
 
 char tmp_str[7];
-//char* convert_int16_to_str(int16_t i)
-//{
-//  sprintf(tmp_str,"%6d",i);
-  //return tmp_str;
-//}
+char* convert_int16_to_str(int16_t i)
+{
+  sprintf(tmp_str,"%6d",i);
+  return tmp_str;
+}
 
 
 void setup() {
-  mybt.begin(9600);
-  Serial.begin(9600);
+  mybt.begin(38400);
+  Serial.begin(38400);
   Wire.begin();
   Wire.beginTransmission(MPU_ADDR);
   Wire.write(0x6B);
@@ -44,27 +44,27 @@ void loop() {
   if( gyro_y > 1801 )
   {
     mybt.write("F");
-    Serial.println("F");
+    Serial.print("f");
   }
   else if( gyro_x > 2700 )
   {
-    mybt.write("L");
-    Serial.println("L");
+    mybt.write("R");
+    Serial.print("r");
   }
   else if( gyro_x < -1100 )
   {
-    mybt.write("R");
-    Serial.println("R");
+    mybt.write("L");
+    Serial.print("l");
   }
   else if( gyro_y < -1800 )
   {
     mybt.write("B");
-    Serial.println("B");
+    Serial.print("b");
   }
   else if( (gyro_x < 2700 && gyro_x > -1100)&&(gyro_y<1800 && gyro_y>-1800)  )
   {
     mybt.write("S");
-    Serial.println("S");
+    Serial.print("s");
   }
     
   
