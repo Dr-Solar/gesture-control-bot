@@ -32,3 +32,43 @@ void loop()
      digitalWrite(8,0);
      delay(200);
    }
+    
+    if (m =="b")
+    {
+      digitalWrite(5,1);
+      digitalWrite(6,0);
+      digitalWrite(7,0);
+      digitalWrite(8,1);
+      delay(200);
+    }
+    
+    if (m =="r")
+    {
+      digitalWrite(5,0);
+      digitalWrite(6,1);
+      digitalWrite(7,0);
+      digitalWrite(8,0);
+      delay(200);
+      
+    }
+    
+    if ( m =="l")
+    {
+      digitalWrite(5,0);
+      digitalWrite(6,0);
+      digitalWrite(7,1);
+      digitalWrite(8,0);
+      delay(200);
+    }
+    
+    if (m =="s")
+    {
+       digitalWrite(5,0);
+       digitalWrite(6,0);
+       digitalWrite(7,0);
+       digitalWrite(8,0);
+       delay(200);
+    }
+
+  
+}
